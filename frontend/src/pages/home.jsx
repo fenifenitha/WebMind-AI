@@ -1,15 +1,26 @@
 import { useState } from "react";
+import { scrapeWebsite } from "../services/api";
 
 function Home() {
   const [url, setUrl] = useState("");
 
-  const handleProcess = () => {
+  const handleProcess = async () => {
     if (!url.trim()) {
       alert("Please enter a website URL");
       return;
     }
 
-    console.log("Processing:", url);
+    try {
+      const data = await scrapeWebsite(url);
+
+      console.log("Scraping Result:", data);
+
+      alert("Website processed successfully");
+    } catch (error) {
+      console.error(error);
+
+      alert("Failed to process website");
+    }
   };
 
   return (

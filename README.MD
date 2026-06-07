@@ -2,82 +2,213 @@
 
 ## RAG Powered Website Chatbot
 
-WebMind AI is a Retrieval-Augmented Generation (RAG) powered chatbot that can crawl websites, process content, store embeddings in a vector database, and answer user questions based on website knowledge.
+WebMind AI is a Retrieval-Augmented Generation (RAG) based chatbot that can understand website content and answer user questions using AI.
+
+The system crawls websites, extracts content, generates embeddings, stores data in a vector database, and provides intelligent responses using Gemini.
 
 
 
 ## Features
 
-- Website Crawling
-- Recursive URL Discovery
-- Content Extraction
-- Semantic Search
-- Retrieval-Augmented Generation (RAG)
-- Source Citations
-- Website Analytics
-- Interactive Chat Interface
+### Completed
+
+* React Frontend Setup
+* FastAPI Backend Setup
+* Landing Page UI
+* Website URL Processing
+* Website Content Scraping
+* Frontend and Backend Integration
+
+### Upcoming
+
+* Multi-Page Website Crawling
+* Recursive URL Discovery
+* Text Chunking
+* Gemini Embeddings
+* Qdrant Vector Database
+* Semantic Search
+* AI Chat Interface
+* Source Citations
 
 
 
 ## Tech Stack
 
 ### Frontend
-- React
 
+* React
+* Vite
 
 ### Backend
-- FastAPI
+
+* FastAPI
+* Uvicorn
+
+### Web Scraping
+
+* Requests
+* BeautifulSoup4
 
 ### AI
-- Gemini Embeddings
-- Gemini LLM
+
+* Gemini Embeddings
+* Gemini LLM
 
 ### Vector Database
-- Qdrant
 
-### Scraping
-- BeautifulSoup
-- Requests
+* Qdrant
 
 ### Chunking
-- Recursive Character Text Splitter
+
+* Recursive Character Text Splitter
 
 ### Similarity Search
-- Cosine Similarity
+
+* Cosine Similarity
 
 
 
-## Architecture
+## Project Architecture
 
-React
-|
-FastAPI
-|
+React Frontend
+
+↓
+
+FastAPI Backend
+
+↓
+
+Website Scraper
+
+↓
+
 Crawler Service
-|
+
+↓
+
 Chunking Service
-|
+
+↓
+
 Embedding Service
-|
-Qdrant
-|
+
+↓
+
+Qdrant Vector Database
+
+↓
+
 Retriever
-|
-Gemini
-|
+
+↓
+
+Gemini LLM
+
+↓
+
 Response Generator
 
 
 
-## Day 1 Progress
+## Project Structure
 
-- Project Structure Created
-- React Frontend Setup
-- FastAPI Backend Setup
-- Landing Page UI Completed
+webmind-ai/
+
+├── frontend/
+
+│ ├── src/
+
+│ │ ├── pages/
+
+│ │ ├── services/
+
+│ │ └── App.jsx
+
+│
+
+├── backend/
+
+│ ├── app/
+
+│ │ ├── services/
+
+│ │ └── main.py
+
+│
+
+└── README.md
 
 
 
-## Project Status
 
-In Development
+
+
+
+
+
+
+
+
+
+
+## Current Workflow
+
+User
+
+↓
+
+Enter Website URL
+
+↓
+
+React Frontend
+
+↓
+
+FastAPI Backend
+
+↓
+
+Website Scraper
+
+↓
+
+Extract Content
+
+↓
+
+Return Response
+
+
+
+## Development Progress
+
+### Day 1
+
+* Initialize Project Architecture
+* React Setup
+* FastAPI Setup
+* Landing Page UI
+
+### Day 2
+
+* Website Scraping Module
+* FastAPI API Integration
+* Frontend Backend Connection
+* Content Extraction using BeautifulSoup
+
+### Next Step
+
+* Multi-Page Website Crawler
+* Internal Link Discovery
+* Recursive Crawling
+
+---
+
+## Author
+
+Fanitha TK
+
+B.Tech Computer Science Engineering
+
+Aspiring AI Engineer | Data Science Enthusiast
