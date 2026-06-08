@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from app.services.crawler import WebsiteCrawler
 
 from app.services.scraper import scrape_website
 
@@ -34,3 +35,17 @@ def home():
 def scrape(data: WebsiteRequest):
 
     return scrape_website(data.url)
+@app.post("/crawl")
+def crawl_website(data: dict):
+
+    crawler = WebsiteCrawler()
+
+    urls = crawler.crawl(
+        data["url"]
+    )
+
+    return {
+        "success": True,
+        "total_pages": len(urls),
+        "pages": urls
+    }
