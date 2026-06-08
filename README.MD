@@ -18,11 +18,12 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 * Website URL Processing
 * Website Content Scraping
 * Frontend and Backend Integration
+* Recursive Website Crawling
+* Internal Link Discovery
+* Domain-Based URL Filtering
 
 ### Upcoming
 
-* Multi-Page Website Crawling
-* Recursive URL Discovery
 * Text Chunking
 * Gemini Embeddings
 * Qdrant Vector Database
@@ -30,7 +31,7 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 * AI Chat Interface
 * Source Citations
 
-
+---
 
 ## Tech Stack
 
@@ -48,6 +49,11 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 
 * Requests
 * BeautifulSoup4
+
+### Crawling
+
+* Recursive Crawling
+* Internal Link Discovery
 
 ### AI
 
@@ -67,7 +73,6 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 * Cosine Similarity
 
 
-
 ## Project Architecture
 
 React Frontend
@@ -78,11 +83,11 @@ FastAPI Backend
 
 ↓
 
-Website Scraper
+Crawler Service
 
 ↓
 
-Crawler Service
+Website Scraper
 
 ↓
 
@@ -132,22 +137,15 @@ webmind-ai/
 
 │ │ ├── services/
 
+│ │ │ ├── scraper.py
+
+│ │ │ └── crawler.py
+
 │ │ └── main.py
 
 │
 
 └── README.md
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -169,6 +167,14 @@ FastAPI Backend
 
 ↓
 
+Crawler Service
+
+↓
+
+Discover Internal Links
+
+↓
+
 Website Scraper
 
 ↓
@@ -178,6 +184,12 @@ Extract Content
 ↓
 
 Return Response
+
+
+
+
+
+
 
 
 
@@ -197,13 +209,22 @@ Return Response
 * Frontend Backend Connection
 * Content Extraction using BeautifulSoup
 
+### Day 3
+
+* Recursive Website Crawler
+* Internal Link Discovery
+* Domain-Based URL Filtering
+* URL Normalization
+* Multi-Page Website Crawling
+* Crawl API Endpoint
+
 ### Next Step
 
-* Multi-Page Website Crawler
-* Internal Link Discovery
-* Recursive Crawling
+* Text Chunking
+* Recursive Character Text Splitter
+* Content Processing Pipeline
 
----
+
 
 ## Author
 
