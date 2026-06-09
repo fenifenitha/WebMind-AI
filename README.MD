@@ -4,7 +4,7 @@
 
 WebMind AI is a Retrieval-Augmented Generation (RAG) based chatbot that can understand website content and answer user questions using AI.
 
-The system crawls websites, extracts content, generates embeddings, stores data in a vector database, and provides intelligent responses using Gemini.
+The system crawls websites, extracts content, chunks large documents, generates embeddings, stores data in a vector database, and provides intelligent responses using Gemini.
 
 
 
@@ -21,17 +21,19 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 * Recursive Website Crawling
 * Internal Link Discovery
 * Domain-Based URL Filtering
+* Text Chunking Pipeline
+* Recursive Character Text Splitting
 
 ### Upcoming
 
-* Text Chunking
 * Gemini Embeddings
 * Qdrant Vector Database
 * Semantic Search
 * AI Chat Interface
 * Source Citations
+* PDF Knowledge Base Support
 
----
+
 
 ## Tech Stack
 
@@ -55,6 +57,10 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 * Recursive Crawling
 * Internal Link Discovery
 
+### Chunking
+
+* Recursive Character Text Splitter
+
 ### AI
 
 * Gemini Embeddings
@@ -64,13 +70,10 @@ The system crawls websites, extracts content, generates embeddings, stores data 
 
 * Qdrant
 
-### Chunking
-
-* Recursive Character Text Splitter
-
 ### Similarity Search
 
 * Cosine Similarity
+
 
 
 ## Project Architecture
@@ -139,7 +142,9 @@ webmind-ai/
 
 │ │ │ ├── scraper.py
 
-│ │ │ └── crawler.py
+│ │ │ ├── crawler.py
+
+│ │ │ └── chunker.py
 
 │ │ └── main.py
 
@@ -183,13 +188,15 @@ Extract Content
 
 ↓
 
-Return Response
+Chunking Service
 
+↓
 
+Create Text Chunks
 
+↓
 
-
-
+Return Processed Data
 
 
 
@@ -218,11 +225,37 @@ Return Response
 * Multi-Page Website Crawling
 * Crawl API Endpoint
 
+### Day 4
+
+* Text Chunking Pipeline
+* Recursive Character Text Splitter
+* Chunk Processing Service
+* Chunk API Endpoint
+* Content Preparation for Embeddings
+
 ### Next Step
 
-* Text Chunking
-* Recursive Character Text Splitter
-* Content Processing Pipeline
+* Gemini Embeddings
+* Vector Generation
+* Qdrant Integration
+* Semantic Retrieval
+
+
+
+## Project Status
+
+Current Phase: Content Processing Pipeline
+
+Completed:
+
+* Crawling
+* Scraping
+* Chunking
+
+In Progress:
+
+* Embedding Generation
+* Vector Database Integration
 
 
 
@@ -233,3 +266,4 @@ Fanitha TK
 B.Tech Computer Science Engineering
 
 Aspiring AI Engineer | Data Science Enthusiast
+
