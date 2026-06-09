@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from app.services.crawler import WebsiteCrawler
+from app.services.chunker import TextChunker
 
 from app.services.scraper import scrape_website
 
@@ -48,4 +49,18 @@ def crawl_website(data: dict):
         "success": True,
         "total_pages": len(urls),
         "pages": urls
+    }
+@app.post("/chunk")
+def chunk_text(data: dict):
+
+    chunker = TextChunker()
+
+    chunks = chunker.create_chunks(
+        data["text"]
+    )
+
+    return {
+        "success": True,
+        "total_chunks": len(chunks),
+        "chunks": chunks
     }
