@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from app.services.crawler import WebsiteCrawler
 from app.services.chunker import TextChunker
+from app.services.embedder import GeminiEmbedder
 
 from app.services.scraper import scrape_website
 
@@ -63,4 +64,17 @@ def chunk_text(data: dict):
         "success": True,
         "total_chunks": len(chunks),
         "chunks": chunks
+    }
+@app.post("/embed")
+def create_embedding(data: dict):
+
+    embedder = GeminiEmbedder()
+
+    embedding = embedder.generate_embedding(
+        data["text"]
+    )
+
+    return {
+        "success": True,
+        "vector_dimension": len(embedding)
     }

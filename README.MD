@@ -23,10 +23,12 @@ The system crawls websites, extracts content, chunks large documents, generates 
 * Domain-Based URL Filtering
 * Text Chunking Pipeline
 * Recursive Character Text Splitting
+* Gemini Embedding Generation
+* Embedding API Endpoint
+* Vector Preparation Pipeline
 
 ### Upcoming
 
-* Gemini Embeddings
 * Qdrant Vector Database
 * Semantic Search
 * AI Chat Interface
@@ -124,29 +126,31 @@ webmind-ai/
 
 ├── frontend/
 
-│ ├── src/
+│   ├── src/
 
-│ │ ├── pages/
+│   │   ├── pages/
 
-│ │ ├── services/
+│   │   ├── services/
 
-│ │ └── App.jsx
+│   │   └── App.jsx
 
 │
 
 ├── backend/
 
-│ ├── app/
+│   ├── app/
 
-│ │ ├── services/
+│   │   ├── services/
 
-│ │ │ ├── scraper.py
+│   │   │   ├── scraper.py
 
-│ │ │ ├── crawler.py
+│   │   │   ├── crawler.py
 
-│ │ │ └── chunker.py
+│   │   │   ├── chunker.py
 
-│ │ └── main.py
+│   │   │   └── embedder.py
+
+│   │   └── main.py
 
 │
 
@@ -196,7 +200,15 @@ Create Text Chunks
 
 ↓
 
-Return Processed Data
+Embedding Service
+
+↓
+
+Generate Gemini Embeddings
+
+↓
+
+Return Vector Data
 
 
 
@@ -233,29 +245,38 @@ Return Processed Data
 * Chunk API Endpoint
 * Content Preparation for Embeddings
 
+### Day 5
+
+* Gemini Embedding Integration
+* Google AI Studio API Setup
+* Embedding Generation Service
+* Embedding API Endpoint
+* Vector Preparation Pipeline
+
 ### Next Step
 
-* Gemini Embeddings
-* Vector Generation
-* Qdrant Integration
+* Qdrant Vector Database
+* Vector Storage
 * Semantic Retrieval
+* Similarity Search
 
 
 
 ## Project Status
 
-Current Phase: Content Processing Pipeline
+Current Phase: Embedding Generation Pipeline
 
-Completed:
+### Completed
 
 * Crawling
 * Scraping
 * Chunking
-
-In Progress:
-
 * Embedding Generation
-* Vector Database Integration
+
+### In Progress
+
+* Qdrant Integration
+* Semantic Retrieval
 
 
 
@@ -266,4 +287,5 @@ Fanitha TK
 B.Tech Computer Science Engineering
 
 Aspiring AI Engineer | Data Science Enthusiast
+
 
