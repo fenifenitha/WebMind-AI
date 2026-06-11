@@ -6,8 +6,6 @@ WebMind AI is a Retrieval-Augmented Generation (RAG) based chatbot that can unde
 
 The system crawls websites, extracts content, chunks large documents, generates embeddings, stores data in a vector database, and provides intelligent responses using Gemini.
 
-
-
 ## Features
 
 ### Completed
@@ -26,16 +24,20 @@ The system crawls websites, extracts content, chunks large documents, generates 
 * Gemini Embedding Generation
 * Embedding API Endpoint
 * Vector Preparation Pipeline
+* Qdrant Vector Database Integration
+* Vector Storage Service
+* Semantic Retrieval System
+* Similarity Search Pipeline
+* Retriever Service
+* Retrieval API Endpoint
 
 ### Upcoming
 
-* Qdrant Vector Database
-* Semantic Search
-* AI Chat Interface
+* Gemini Chat Interface
+* RAG Question Answering
 * Source Citations
 * PDF Knowledge Base Support
-
-
+* Conversation History
 
 ## Tech Stack
 
@@ -75,8 +77,6 @@ The system crawls websites, extracts content, chunks large documents, generates 
 ### Similarity Search
 
 * Cosine Similarity
-
-
 
 ## Project Architecture
 
@@ -118,8 +118,6 @@ Gemini LLM
 
 Response Generator
 
-
-
 ## Project Structure
 
 webmind-ai/
@@ -148,15 +146,17 @@ webmind-ai/
 
 │   │   │   ├── chunker.py
 
-│   │   │   └── embedder.py
+│   │   │   ├── embedder.py
+
+│   │   │   ├── vector_store.py
+
+│   │   │   └── retriever.py
 
 │   │   └── main.py
 
 │
 
 └── README.md
-
-
 
 ## Current Workflow
 
@@ -208,9 +208,23 @@ Generate Gemini Embeddings
 
 ↓
 
-Return Vector Data
+Qdrant Vector Database
 
+↓
 
+Store Vectors
+
+↓
+
+Retriever Service
+
+↓
+
+Semantic Search
+
+↓
+
+Return Relevant Context
 
 ## Development Progress
 
@@ -253,18 +267,26 @@ Return Vector Data
 * Embedding API Endpoint
 * Vector Preparation Pipeline
 
+### Day 6
+
+* Qdrant Vector Database Integration
+* Vector Storage Service
+* Store Embeddings in Qdrant
+* Semantic Similarity Search
+* Retriever Service
+* Retrieval API Endpoint
+* Context Retrieval Pipeline
+
 ### Next Step
 
-* Qdrant Vector Database
-* Vector Storage
-* Semantic Retrieval
-* Similarity Search
-
-
+* Gemini Chat Integration
+* RAG Response Generation
+* PDF Knowledge Base Support
+* Source Citations
 
 ## Project Status
 
-Current Phase: Embedding Generation Pipeline
+Current Phase: Semantic Retrieval Pipeline
 
 ### Completed
 
@@ -272,13 +294,13 @@ Current Phase: Embedding Generation Pipeline
 * Scraping
 * Chunking
 * Embedding Generation
+* Vector Storage
+* Semantic Retrieval
 
 ### In Progress
 
-* Qdrant Integration
-* Semantic Retrieval
-
-
+* RAG Chatbot
+* PDF Knowledge Base Integration
 
 ## Author
 
@@ -287,5 +309,6 @@ Fanitha TK
 B.Tech Computer Science Engineering
 
 Aspiring AI Engineer | Data Science Enthusiast
+
 
 
