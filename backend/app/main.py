@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from app.services.crawler import WebsiteCrawler
 from app.services.chunker import TextChunker
 from app.services.embedder import GeminiEmbedder
+from app.services.retriever import Retriever
+from app.services.vector_store import VectorStore
 
 from app.services.scraper import scrape_website
 
@@ -77,4 +79,23 @@ def create_embedding(data: dict):
     return {
         "success": True,
         "vector_dimension": len(embedding)
+    }
+@app.post("/retrieve")
+def retrieve(data: dict):
+
+    store = VectorStore()
+
+    retriever = Retriever()
+
+    results = store.search(
+        data["vector"]
+    )
+
+    context = retriever.get_context(
+        results
+    )
+
+    return {
+        "success": True,
+        "context": context
     }
